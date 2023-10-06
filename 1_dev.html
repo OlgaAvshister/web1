@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Лабораторная работа №1 по дисциплине веб-программирование">
+        <meta name="author" content="Авшистер Ольга Аркадьевна">
+        <style>
+
+          body {
+            background-color: white;
+            font-size: 1em;
+          }
+        
+          header h1{
+            font-size: 1.6em;
+            top: 0;
+            width: 100%;
+            position: fixed;                   
+            color: white;
+            background-color: #6161ff;
+            left: 0;
+            font-style: italic;
+            text-align: center;
+          }
+        
+          
+          input,
+          svg {
+            background-color: white;
+          }
+        
+          input[type=button] {
+            width: 50px
+          }
+        /*
+        Каскадирование
+        */
+          input[type=text] {
+            width: 150px
+          }
+        
+          input[type=radio] {
+            width: 50px
+          }
+        
+          svg {
+            width: 300px;
+            height: 300px;
+          }
+        
+          /*
+          Селектор идентификаторов
+          */
+          #checkButton {
+            text-align: center;
+            text-transform: uppercase;
+            background-color: #6161ff;
+            border: none;
+            color: white;
+            padding: 15px;
+            width: 150px;
+          }
+
+
+          /*
+          Селектор классов
+          */
+          .form-container {
+            width: 500px;
+            margin: 0 auto;                           
+          }
+          .svg-container {
+              width: 500px;
+              margin: 0 auto;
+              padding-top: 100px;
+              text-align: center;
+          }
+
+          .form-group {
+              margin-bottom: 20px;
+          }
+          .form-label {
+              display: block;                                
+              font-weight: bold;
+          }
+          .form-input {
+              width: 100%;
+              padding: 5px;
+          }
+
+        /*Селектор дочерних элементов */
+          .form-group > input {
+              margin-left: 5%;
+              margin-top: 1%;
+          } 
+
+
+          .form_radio {
+            margin-bottom: 10px;
+          }
+
+          /*
+          Селектор потомств
+          */
+          .form_radio label {
+            display: inline-block;                                     
+            cursor: pointer;
+            position: relative;                                        
+            padding-left: 5px;
+            margin-right: 0;
+            line-height: 18px;
+
+          }
+          .form_radio label:before {
+
+            display: inline-block;
+            width: 17px;
+            height: 18px;
+            position: absolute;
+            left: 0;
+            bottom: 1px;
+          }
+
+        </style>
+        <title>Лабораторная №1</title>
+    </head>
+    <body>
+      <header>
+          <h1>Авшистер Ольга, P3213, Вариант 2300</h1>
+      </header>
+
+      <div class="svg-container">
+             <svg xmlns="http://www.w3.org/2000/svg">
+               <line x1="0" y1="150" x2="300" y2="150" stroke="#000720"></line>
+               <line x1="150" y1="0" x2="150" y2="300" stroke="#000720"></line>
+
+               <line x1="270" y1="148" x2="270" y2="152" stroke="#000720"></line>
+               <text x="265" y="140">R</text>
+               <line x1="210" y1="148" x2="210" y2="152" stroke="#000720"></line>
+               <text x="200" y="140">R/2</text>
+               <line x1="90" y1="148" x2="90" y2="152" stroke="#000720"></line>
+               <text x="75" y="140">-R/2</text>
+               <line x1="30" y1="148" x2="30" y2="152" stroke="#000720"></line>
+               <text x="20" y="140">-R</text>
+               <line x1="148" y1="30" x2="152" y2="30" stroke="#000720"></line>
+               <text x="156" y="35">R</text>
+               <line x1="148" y1="90" x2="152" y2="90" stroke="#000720"></line>
+               <text x="156" y="95">R/2</text>
+               <line x1="148" y1="210" x2="152" y2="210" stroke="#000720"></line>
+               <text x="156" y="185">-R/2</text>
+               <line x1="148" y1="270" x2="152" y2="270" stroke="#000720"></line>
+               <text x="156" y="275">-R</text>
+
+               <polygon points="300,150 295,155 295,145" fill="#000720" stroke="#000720"></polygon>
+               <polygon points="150,0 145,5 155,5" fill="#000720" stroke="#000720"></polygon>
+               <rect x="150" y="90" width="120" height="60" fill-opacity="0.4" stroke="navy" fill="blue"></rect>
+               <polygon points="150,150 30,150 150,90" fill-opacity="0.4" stroke="navy" fill="blue"></polygon>
+               <path d="M150 150 L 210,150 C 215,200 180,210 149,210" fill-opacity="0.4" stroke="navy" fill="blue"></path>
+             </svg>
+            </div>
+             <div class="form-container">
+              <form action="1.php" method="GET" name="form">
+                <input type="hidden" name="X-input">
+                <input type="hidden" id="time" name="time">
+                <input type="hidden" id="timezone" name="timezone">
+                  <div class="form-group">
+                      <label for="X-button" class="form-label">Выберите X:</label>
+                      <input name="X-button" class="illuminated animated" type="button" value="-5">
+                      <input name="X-button" class="illuminated animated" type="button" value="-4">
+                      <input name="X-button" class="illuminated animated" type="button" value="-3">
+                      <input name="X-button" class="illuminated animated" type="button" value="-2">
+                      <input name="X-button" class="illuminated animated" type="button" value="-1">
+                      <input name="X-button" class="illuminated animated" type="button" value="0">
+                      <input name="X-button" class="illuminated animated" type="button" value="1">
+                      <input name="X-button" class="illuminated animated" type="button" value="2">
+                      <input name="X-button" class="illuminated animated" type="button" value="3">
+
+                  </div>
+                  <div class="form-group">
+                      <label for="Y-input" class="form-label">Выберите Y:</label>
+                      <input required name="Y-input" class="form-input illuminated animated" type="text" placeholder="Значение от -5 до 5">
+                  </div>
+                  <div class="form-group">
+                    <label for="" class="form-label">Выберите R:</label>
+                    <div class="form_radio">
+                      <input id="radio-1" type="radio" name="R-input" value="1" checked>
+                      <label for="radio-1">1</label>
+                    </div>
+                    <div class="form_radio">
+                      <input id="radio-2" type="radio" name="R-input" value="2" >
+                      <label for="radio-2">2</label>
+                    </div>
+                    <div class="form_radio">
+                      <input id="radio-3" type="radio" name="R-input" value="3" >
+                      <label for="radio-3">3</label>
+                    </div>
+                    <div class="form_radio">
+                      <input id="radio-4" type="radio" name="R-input" value="4" >
+                      <label for="radio-4">4</label>
+                    </div>
+                    <div class="form_radio">
+                      <input id="radio-5" type="radio" name="R-input" value="5" >
+                      <label for="radio-5">5</label>
+                    </div>
+                  </div>
+
+                  <button type="button" class="form-submit" id="checkButton" onclick="doSubmit()">Отправить</button>
+              </form>
+          </div>
+
+        <script src="1.js"></script>
+    </body>
+</html>
